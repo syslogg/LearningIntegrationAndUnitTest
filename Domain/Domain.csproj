@@ -35,6 +35,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Agencia.cs" />
+    <Compile Include="Entities\Banco.cs" />
+    <Compile Include="Entities\Base\Entity.cs" />
+    <Compile Include="Entities\Base\Conta.cs" />
+    <Compile Include="Entities\Corrente.cs" />
+    <Compile Include="Entities\Poupanca.cs" />
+    <Compile Include="Entities\Usuario.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
