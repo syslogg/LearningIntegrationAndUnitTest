@@ -25,7 +25,7 @@ namespace Web.Tests.Controllers
             Assert.IsNotNull(result);
         }
 
-        [TestMethod]
+        /*[TestMethod]
         public void About()
         {
             // Arrange
@@ -36,7 +36,7 @@ namespace Web.Tests.Controllers
 
             // Assert
             Assert.AreEqual("Your application description page.", result.ViewBag.Message);
-        }
+        }*/
 
         [TestMethod]
         public void Contact()
