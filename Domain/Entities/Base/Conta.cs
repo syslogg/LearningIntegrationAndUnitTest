@@ -4,7 +4,11 @@
     {
         public Agencia Agencia { get;set; }
 
+        public int AgenciaId { get; set; }
+
         public Usuario Usuario { get; set; }
+
+        public int UsuarioId { get; set; }
 
         public virtual string Codigo { get; set; }
 

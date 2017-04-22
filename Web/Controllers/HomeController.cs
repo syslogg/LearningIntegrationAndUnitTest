@@ -1,13 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.Practices.Unity;
+using Repository;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Web.Controllers
 {
     public class HomeController : Controller
     {
+        
+        public IUnitOfWork UOW { get; set; }
+
+        public HomeController()
+        {
+            UOW = new UnitOfWork();
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -15,7 +22,10 @@ namespace Web.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+
+            var listDeUsuario = UOW.UsuarioRepository.ListAll();
+            var msg = string.Join(", ",listDeUsuario.Select(x => x.Nome));
+            ViewBag.Message = msg;
 
             return View();
         }

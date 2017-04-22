@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{3A98AB28-D4CC-46F7-9ECF-F51D4076FDFB}"
 EndProject
@@ -16,6 +16,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{7728B790-099C-410C-A3ED-0E13F29229B4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{995C82AC-B148-41D4-92FB-769D0B17154A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{7E68D5DC-217C-44A0-84C0-D8CCAE14081D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{963C87C1-C857-4AB5-B5B4-017BC081C81C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Tests", "Tests\Repository.Tests\Repository.Tests.csproj", "{690FB7CE-105D-4D49-AA88-F9CA85FF52A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +41,14 @@ Global
 		{995C82AC-B148-41D4-92FB-769D0B17154A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{995C82AC-B148-41D4-92FB-769D0B17154A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{995C82AC-B148-41D4-92FB-769D0B17154A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E68D5DC-217C-44A0-84C0-D8CCAE14081D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E68D5DC-217C-44A0-84C0-D8CCAE14081D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E68D5DC-217C-44A0-84C0-D8CCAE14081D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E68D5DC-217C-44A0-84C0-D8CCAE14081D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{690FB7CE-105D-4D49-AA88-F9CA85FF52A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{690FB7CE-105D-4D49-AA88-F9CA85FF52A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{690FB7CE-105D-4D49-AA88-F9CA85FF52A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{690FB7CE-105D-4D49-AA88-F9CA85FF52A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,5 +58,8 @@ Global
 		{3BE38450-8046-4C6A-AF1F-B9503443C804} = {134F22BC-C67D-4568-ADCB-B80E01EAE565}
 		{134F22BC-C67D-4568-ADCB-B80E01EAE565} = {8B81F37A-8F75-4472-98AE-848176628377}
 		{995C82AC-B148-41D4-92FB-769D0B17154A} = {7728B790-099C-410C-A3ED-0E13F29229B4}
+		{7E68D5DC-217C-44A0-84C0-D8CCAE14081D} = {7728B790-099C-410C-A3ED-0E13F29229B4}
+		{963C87C1-C857-4AB5-B5B4-017BC081C81C} = {8B81F37A-8F75-4472-98AE-848176628377}
+		{690FB7CE-105D-4D49-AA88-F9CA85FF52A7} = {963C87C1-C857-4AB5-B5B4-017BC081C81C}
 	EndGlobalSection
 EndGlobal
