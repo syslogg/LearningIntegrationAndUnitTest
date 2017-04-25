@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using System.Linq;
 
 namespace Repository.Tests
@@ -9,11 +10,8 @@ namespace Repository.Tests
         [TestMethod]
         public void ContagemTodosUsuarios()
         {
-            IUnitOfWork _uow = new UnitOfWork(new DbBKContext());
-
-            var listCount = _uow.UsuarioRepository.ListAll().Count();
-
-            Assert.AreEqual(2, listCount);
+            var mock = new Mock<DbBKContext>();
+            var uow = new UnitOfWork(mock.Object);
 
         }
 

@@ -7,12 +7,12 @@ namespace Web.Controllers
 {
     public class HomeController : Controller
     {
-        
+
+        [Dependency]
         public IUnitOfWork UOW { get; set; }
 
         public HomeController()
         {
-            UOW = new UnitOfWork();
         }
 
         public ActionResult Index()
