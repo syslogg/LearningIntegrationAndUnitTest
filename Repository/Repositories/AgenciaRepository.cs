@@ -7,7 +7,7 @@ namespace Repository.Repositories
 {
     public class AgenciaRepository : Repository<Agencia>, IAgenciaRepository
     {
-        public AgenciaRepository(DbContext dbContext)
+        public AgenciaRepository(DbBKContext dbContext)
             : base(dbContext)
         {
         }

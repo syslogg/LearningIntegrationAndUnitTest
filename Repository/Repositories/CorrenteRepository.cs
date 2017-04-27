@@ -7,7 +7,7 @@ namespace Repository.Repositories
 {
     public class CorrenteRepository : Repository<Corrente>, ICorrenteRepository
     {
-        public CorrenteRepository(DbContext dbContext)
+        public CorrenteRepository(DbBKContext dbContext)
             : base(dbContext)
         {
         }

@@ -16,7 +16,7 @@ namespace Repository.Interfaces
         /// <summary>
         /// Retorna a lista de <see cref="T"/> de acordo com o predicado
         /// </summary>
-        IEnumerable<T> Find(Func<T,bool> predicate);
+        List<T> Find(Func<T,bool> predicate);
 
         /// <summary>
         /// Retorna todos os registros

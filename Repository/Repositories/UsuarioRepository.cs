@@ -7,7 +7,7 @@ namespace Repository.Repositories
 {
     public class UsuarioRepository : Repository<Usuario>, IUsuarioRepository
     {
-        public UsuarioRepository(DbContext dbContext)
+        public UsuarioRepository(DbBKContext dbContext)
             : base(dbContext)
         {
         }

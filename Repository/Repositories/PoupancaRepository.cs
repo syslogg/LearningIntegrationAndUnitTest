@@ -7,7 +7,7 @@ namespace Repository.Repositories
 {
     public class PoupancaRepository : Repository<Poupanca>, IPoupancaRepository
     {
-        public PoupancaRepository(DbContext dbContext)
+        public PoupancaRepository(DbBKContext dbContext)
             : base(dbContext)
         {
         }

@@ -7,7 +7,7 @@ namespace Repository.Repositories
 {
     public class BancoRepository : Repository<Banco> , IBancoRepository
     {
-        public BancoRepository(DbContext dbContext)
+        public BancoRepository(DbBKContext dbContext)
             : base(dbContext)
         {
         }

@@ -11,10 +11,10 @@ namespace Repository.Base
     public abstract class Repository<T> : IRepository<T> where T : class
     {
 
-        private readonly DbContext _dbContext; 
+        private readonly DbBKContext _dbContext; 
         private DbSet<T> _dbSet;
 
-        public Repository(DbContext dbContext)
+        public Repository(DbBKContext dbContext)
         {
             _dbContext = dbContext;
             _dbSet = _dbContext.Set<T>();
@@ -45,11 +45,11 @@ namespace Repository.Base
             }
         }
 
-        public IEnumerable<T> Find(Func<T, bool> predicate)
+        public List<T> Find(Func<T, bool> predicate)
         {
             try
             {
-                return _dbSet.Where(predicate);
+                return _dbSet.Where(predicate).ToList();
             }
             catch (Exception e)
             {

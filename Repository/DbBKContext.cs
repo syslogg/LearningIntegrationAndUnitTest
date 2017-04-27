@@ -16,27 +16,27 @@ namespace Repository
         /// <summary>
         /// DbSet Usuario
         /// </summary>
-        public DbSet<Usuario> Usuario { get; set; }
+        public virtual IDbSet<Usuario> Usuario { get; set; }
 
         /// <summary>
         /// DbSet Poupanca
         /// </summary>
-        public DbSet<Poupanca> Poupanca { get; set; }
+        public virtual IDbSet<Poupanca> Poupanca { get; set; }
 
         /// <summary>
         /// DbSet Corrente
         /// </summary>
-        public DbSet<Corrente> Corrente { get; set; }
+        public virtual IDbSet<Corrente> Corrente { get; set; }
 
         /// <summary>
         /// DbSet Agencia
         /// </summary>
-        public DbSet<Agencia> Agencia { get; set; }
+        public virtual IDbSet<Agencia> Agencia { get; set; }
 
         /// <summary>
         /// DbSet Banco
         /// </summary>
-        public DbSet<Banco> Banco { get; set; }
+        public virtual DbSet<Banco> Banco { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
