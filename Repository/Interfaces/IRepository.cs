@@ -33,7 +33,7 @@ namespace Repository.Interfaces
         /// Adiciona dados na entidade <see cref="T"/>
         /// </summary>
         /// <param name="entity">Passar <see cref="T"/> com Id igual a 0</param>
-        void Add(T entity);
+        T Add(T entity);
 
         /// <summary>
         /// Deleta dados da entidade

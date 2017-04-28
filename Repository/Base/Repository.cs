@@ -20,11 +20,11 @@ namespace Repository.Base
             _dbSet = _dbContext.Set<T>();
         }
 
-        public void Add(T entity)
+        public T Add(T entity)
         {
             try
             {
-                _dbSet.Add(entity);
+                return _dbSet.Add(entity);
             }
             catch (Exception e)
             {

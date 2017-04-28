@@ -29,7 +29,7 @@ namespace Repository.Tests.Base
             _mockDbContext = new Mock<DbBKContext>();
 
             //Setup DbSet
-            _mockDbSet = HelperTests.CreateDbSetByList<Usuario>(_listUsuario);
+            _mockDbSet = HelperTests.CreateDbSetByList<Usuario>(ref _listUsuario);
             //_mockDbSet = HelperTests.CreateDbSetByList<Usuario>(_listMockUsuario);
 
             //Setup DbContext

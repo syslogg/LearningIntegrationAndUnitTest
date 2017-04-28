@@ -1,12 +1,7 @@
 ﻿using Domain.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using Repository.Base;
-using Repository.Interfaces.Repositories;
-using Repository.Repositories;
 using Repository.Tests.Base;
-using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 
 namespace Repository.Tests
@@ -22,7 +17,7 @@ namespace Repository.Tests
         }
 
         [TestMethod]
-        public void GetAllUser()
+        public void GetAllItem()
         {
             var result = _uow.UsuarioRepository.ListAll();
 
@@ -31,7 +26,7 @@ namespace Repository.Tests
         }
 
         [TestMethod]
-        public void GetUserByPredicate()
+        public void GetItemByPredicate()
         {
             //Act
             var result = _uow.UsuarioRepository.Find(x => x.Id == 1);
@@ -44,7 +39,39 @@ namespace Repository.Tests
 
         }
 
-        
+        [TestMethod]
+        public void AddItem()
+        {
+            //Act
+            var result = _uow.UsuarioRepository.Add(new Usuario() { Nome = "Teste Add", Endereco = "Teste Add" });
+            _uow.Commit();
+
+            _mockDbSet.Verify(x => x.Add(It.IsAny<Usuario>()), Times.Once());
+            _mockDbContext.Verify(x => x.SaveChanges(), Times.Once());
+        }
+
+        [TestMethod]
+        public void GetItem()
+        {
+            //Act
+            var result = _uow.UsuarioRepository.Get(1);
+
+            //Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(_listUsuario.FirstOrDefault(x => x.Id == 1).Id, result.Id);
+            Assert.AreEqual(_listUsuario.FirstOrDefault(x => x.Id == 1).Nome, result.Nome);
+            Assert.AreEqual(_listUsuario.FirstOrDefault(x => x.Id == 1).Endereco, result.Endereco);
+        }
+
+        [TestMethod]
+        public void DeleteItem()
+        {
+            //Act
+            // _uow.UsuarioRepository.Delete(new Usuario() { Id = 1 });
+
+            //Assert
+            //Assert.
+        }
         
 
     }
