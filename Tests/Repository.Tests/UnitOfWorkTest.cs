@@ -40,14 +40,14 @@ namespace Repository.Tests
         }
 
         [TestMethod]
-        public void AddItem()
+        public void NotAddDuplicatedItem()
         {
             //Act
             var result = _uow.UsuarioRepository.Add(new Usuario() { Nome = "Teste Add", Endereco = "Teste Add" });
             _uow.Commit();
 
+            //Assert
             _mockDbSet.Verify(x => x.Add(It.IsAny<Usuario>()), Times.Once());
-            _mockDbContext.Verify(x => x.SaveChanges(), Times.Once());
         }
 
         [TestMethod]
@@ -67,12 +67,10 @@ namespace Repository.Tests
         public void DeleteItem()
         {
             //Act
-            // _uow.UsuarioRepository.Delete(new Usuario() { Id = 1 });
+            _uow.UsuarioRepository.Delete(new Usuario() { Id = 1 });
 
             //Assert
-            //Assert.
+            Assert.IsNull(_uow.UsuarioRepository.Get(1));
         }
-        
-
     }
 }

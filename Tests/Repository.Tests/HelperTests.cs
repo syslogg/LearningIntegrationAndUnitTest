@@ -16,9 +16,14 @@ namespace Repository.Tests
             mockSet.As<IQueryable<TEntity>>().Setup(m => m.Expression).Returns(queryable.Expression);
             mockSet.As<IQueryable<TEntity>>().Setup(m => m.ElementType).Returns(queryable.ElementType);
             mockSet.As<IQueryable<TEntity>>().Setup(m => m.GetEnumerator()).Returns(queryable.GetEnumerator());
-            mockSet.Setup(m => m.Add(It.IsAny<TEntity>())).Callback<TEntity>(data.Add);
+            mockSet.Setup(m => m.Add(It.IsAny<TEntity>())).Callback<TEntity>((x) =>
+            {
+                var list = queryable.ToList();
+                list.Add(x);
+                queryable = list.AsQueryable();
+            });
             mockSet.Setup(m => m.Find(It.IsAny<object[]>())).Returns((object[] id) => queryable.FirstOrDefault(x => x.Id == (int)id.FirstOrDefault()));
-            mockSet.Setup(m => m.Remove(It.IsAny<TEntity>())).Callback<TEntity>((x) => queryable.ToList().RemoveAt(x.Id));
+            mockSet.Setup(m => m.Remove(It.IsAny<TEntity>())).Callback<TEntity>((x) => { queryable = queryable.Where(z => z.Id != z.Id); });
 
             data = queryable.ToList();
 
